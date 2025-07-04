@@ -5,16 +5,16 @@ export class AppService {
   getHello(): string {
     return 'Hello World!!';
   }
-
-  getHelloAleman(): string {
-    return 'Hallo Welt';
+  
+  getSimba(): string {
+    return 'Hakuna Matata, una forma de ser';
   }
 
-  getHelloFrances(): string {
-    return 'mi mensaje de pruebas';
+  getStich(): string {
+    return 'Ohana significa familia, y la familia nunca te abandona';
   }
 
-  getHelloEspanol(): string {
-    return 'Hola Mundo!!';
+  getStarWars(): string {
+    return 'Que la fuerza te acompañe';
   }
 }

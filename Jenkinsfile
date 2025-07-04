@@ -32,5 +32,16 @@ pipeline {
                 }
             }
         }
+        stage ("build y push de imagen docker"){
+            steps {
+                script {
+                    docker.withRegistry("${registry}", registryCredentials ){
+                        sh "docker build -t backend-nest-test-dvs ."
+                        sh "docker tag backend-nest-test-dvs ${dockerImagePrefix}/backend-nest-test-dvs"
+                        sh "docker push ${dockerImagePrefix}/backend-nest-test-dvs"
+                    }
+                }
+            }
+        }
     }
 }

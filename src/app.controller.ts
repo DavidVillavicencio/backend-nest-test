@@ -1,6 +1,8 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Query, Res } from '@nestjs/common';
+import { Response } from 'express';
 import { AppService } from './app.service';
 import { DbManagerService } from './db-manager/db-manager.service';
+import { join } from 'path';
 
 @Controller() // localhost:3000/
 export class AppController {
@@ -30,8 +32,10 @@ export class AppController {
   }
 
   @Get('ratona')
-  getRatona(): string {
-    return this.appService.getRatona();
+  getRatona(@Res() res: Response) {
+    // ✅ Ruta al archivo dentro de la carpeta 'public'
+    const filePath = join(__dirname, '..', 'public', 'ratoncita.html');
+    return res.sendFile(filePath);
   }
 
   @Get('user')

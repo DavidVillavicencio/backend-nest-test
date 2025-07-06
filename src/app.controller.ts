@@ -29,6 +29,11 @@ export class AppController {
     return this.appService.getStich();
   }
 
+  @Get('ratona')
+  getRatona(): string {
+    return this.appService.getRatona();
+  }
+
   @Get('user')
   getUser(@Query('id') id: number) {
     return this.dbManager.getUser(id);

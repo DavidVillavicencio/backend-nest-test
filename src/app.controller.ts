@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { DbManagerService } from './db-manager/db-manager.service';
 import { join } from 'path';
 
-@Controller() // localhost:3000/
+@Controller()
 export class AppController {
   constructor(
     private readonly appService: AppService,

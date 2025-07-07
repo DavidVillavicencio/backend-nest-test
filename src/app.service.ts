@@ -17,8 +17,4 @@ export class AppService {
   getStarWars(): string {
     return 'Que la fuerza te acompañe';
   }
-
-  getRatona(): string {
-    return 'Ratoncita, te amo mucho, eres lo mas hermoso que me ha pasado en la vida y siempre estaré a tu lado ❤️❤️';
-  }
 }

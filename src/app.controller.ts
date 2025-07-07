@@ -22,8 +22,9 @@ export class AppController {
   }
 
   @Get('starwars')
-  getStarWars(): string {
-    return this.appService.getStarWars();
+  getStarWars(@Res() res: Response) {
+    const filePath = join(__dirname, '..', 'public', 'starwars.html');
+    return res.sendFile(filePath);
   }
 
   @Get('stich')
@@ -33,7 +34,6 @@ export class AppController {
 
   @Get('ratona')
   getRatona(@Res() res: Response) {
-    // ✅ Ruta al archivo dentro de la carpeta 'public'
     const filePath = join(__dirname, '..', 'public', 'ratoncita.html');
     return res.sendFile(filePath);
   }
